@@ -4,19 +4,19 @@
 //     return response.json();
 // })
 // .then((data)=>{
-    //  console.log(data);
-    // let results = data.results;
-    // let record = results.filter((items)=>{
-    //     return items.id == 1
-    // })
-    //  console.log(record);
-    //  console.table(results);
-// });
-// .catch(()=> {
+//      console.log(data);
+//     let results = data.results;
+//     let record = results.filter((items)=>{
+//         return items.id == 1
+//     })
+//      console.log(record);
+//      console.table(results);
+// })
+// .catch((err)=> {
 //     console.log("Please try again Later");
 // });
-let data = [9, 12, "Jake", 8, 1];
 // =============================================================
+// let data = [9, 12, "Jake", 8, 1];
 // Adding a New Element into an Array use {push()-method} //
 // data.push(20)
 // =============================================================
@@ -67,3 +67,42 @@ let data = [9, 12, "Jake", 8, 1];
 // data.splice(0, 0,"Matthew","Camryn");
 // data.splice(2,1,"Jeff");
 // console.log(data);
+// =============================================================
+// Async 1st-Example//
+// (async function fetchData() {
+//     let res = await fetch("../data/data.json");
+//     let data = await res.json();
+//     console.log(data.results);
+// })();
+// =============================================================
+// Async 2nd-Example//
+//row
+let wrapper = document.querySelector('.wrapper');
+async function fetchData() {
+    let res = await fetch("https://randomuser.me/api?results=100");
+    let data = await res.json();
+    return data.results;
+  }
+(async function display() {
+    let data = await fetchData()
+    data.forEach((item) => {
+    //   console.log(item);
+    wrapper.innerHTML +=`
+    <div class="card" style="width: 18rem;">
+        <img src="${item.picture.large}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>`
+    });
+  })();
+// ======================2nd-Method====================================
+// async function fetchData() {
+//     let res = await fetch("https://randomuser.me/api?results=100");
+//     let data = await res.json();
+//     console.table(data.results);
+// };
+// fetchData()
+// =============================================================
