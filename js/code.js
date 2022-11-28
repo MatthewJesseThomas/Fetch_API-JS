@@ -86,12 +86,12 @@ async function fetchData() {
 (async function display() {
     let data = await fetchData()
     data.forEach((item) => {
-    //   console.log(item);
+      console.log(item);
     wrapper.innerHTML +=`
     <div class="card" style="width: 18rem;">
-        <img src="${item.picture.large}" class="card-img-top" alt="...">
+        <img src="${item.picture.large}" class="card-img-top" alt="${item.name}">
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">${item.name.first} ${item.name.last}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
