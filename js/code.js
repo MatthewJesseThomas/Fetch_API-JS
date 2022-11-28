@@ -5,8 +5,12 @@ fetch("../data/data.json")
 })
 .then((data)=>{
     //  console.log(data);
-     console.table(data.results);
-})
-.catch(()=> {
-    console.log("Please try again Later");
+    let results = data.results;
+    let record = results.filter((items)=>{
+        return items.id == 1
+    })
+     console.log(record);
 });
+// .catch(()=> {
+//     console.log("Please try again Later");
+// });
