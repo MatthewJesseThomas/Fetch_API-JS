@@ -4,19 +4,22 @@
             "id": 12345678901,
             "firstname": "Matthew Jesse",
             "surname": "Thomas",
-            "email": "matthew@example.com"
+            "email": "matthew@example.com",
+            "contact": "0823718529"
         },
         {
             "id": 12345678902,
             "firstname": "John-Bruce",
             "surname": "Noad",
-            "email": "johnB@example.com"
+            "email": "johnB@example.com",
+            "contact":"0821234566"
         },
         {
             "id": 12345678903,
             "firstname": "Faeez",
             "surname": "Miller",
-            "email": "fa33z@example.com"
+            "email": "fa33z@example.com",
+            "contact": "0829876548"
         }
 
     ]
